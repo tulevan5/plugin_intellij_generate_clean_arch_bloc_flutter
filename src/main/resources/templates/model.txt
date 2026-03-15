@@ -1,0 +1,20 @@
+import 'package:json_annotation/json_annotation.dart';
+import 'package:{{projectName}}/features/{{fName}}/domain/entities/{{fName}}_entity.dart';
+
+part '{{fName}}_response.g.dart';
+
+@JsonSerializable()
+class {{cName}}Response {
+
+  {{cName}}Response({
+    // TODO: Implement here
+  });
+
+  factory {{cName}}Response.fromJson(Map<String, dynamic> json) => _${{cName}}ResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _${{cName}}ResponseToJson(this);
+
+  {{cName}}Entity get toEntity => {{cName}}Entity(
+        // TODO: Implement here
+      );
+}

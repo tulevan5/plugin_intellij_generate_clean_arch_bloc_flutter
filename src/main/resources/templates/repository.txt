@@ -1,0 +1,8 @@
+import 'package:dartz/dartz.dart';
+
+import 'package:{{projectName}}/core/error/failures.dart';
+import 'package:{{projectName}}/features/{{fName}}/domain/entities/{{fName}}_entity.dart';
+
+abstract class {{cName}}Repository {
+  Future<Either<Failure, {{cName}}>> methodExample(Map<String, dynamic> body);
+}

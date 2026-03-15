@@ -1,0 +1,32 @@
+part of '{{fName}}_bloc.dart';
+
+class {{cName}}State extends Equatable {
+  const {{cName}}State();
+
+  @override
+  List<Object?> get props => [];
+}
+
+class {{cName}}Initial extends {{cName}}State {
+  @override
+  List<Object> get props => [];
+}
+
+class {{cName}}Loading extends {{cName}}State {}
+
+class {{cName}}Success extends {{cName}}State {
+  const {{cName}}Success({});
+
+  @override
+  List<Object?> get props => [];
+}
+
+class {{cName}}Failure extends {{cName}}State {
+  final String? message;
+  final String? typeMessage;
+
+  const {{cName}}Failure({this.message, this.typeMessage});
+
+  @override
+  List<Object?> get props => [message, typeMessage, DateTime.now()];
+}

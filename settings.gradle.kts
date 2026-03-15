@@ -1,0 +1,1 @@
+rootProject.name = "generator_clean_architecture_flutter"

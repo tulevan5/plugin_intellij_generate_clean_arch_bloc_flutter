@@ -1,0 +1,16 @@
+import 'package:dartz/dartz.dart';
+import 'package:{{projectName}}/core/error/failures.dart';
+import 'package:{{projectName}}/core/usecase/usecase.dart';
+import 'package:{{projectName}}/features/{{fName}}/domain/entities/{{fName}}_entity.dart';
+import 'package:{{projectName}}/features/{{fName}}/domain/repositories/{{fName}}_repository.dart';
+
+class {{cName}}UseCase implements UseCase<{{cName}}Entity, Map<String, dynamic>> {
+  final {{cName}}Repository repository;
+
+  {{cName}}UseCase(this.repository);
+
+  @override
+  Future<Either<Failure, {{cName}}Entity>> call(Map<String, dynamic> body) {
+    return repository.example(body);
+  }
+}

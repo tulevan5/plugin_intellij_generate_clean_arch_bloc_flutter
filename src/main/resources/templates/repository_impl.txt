@@ -1,0 +1,47 @@
+import 'dart:io';
+
+import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
+import 'package:{{projectName}}/core/error/failures.dart';
+import 'package:{{projectName}}/core/utils/extensions/string_ext.dart';
+import 'package:{{projectName}}/features/{{fName}}/data/data_sources/{{fName}}_remote_data_source.dart';
+import 'package:{{projectName}}/features/{{fName}}/domain/entities/{{fName}}_entity.dart';
+import 'package:{{projectName}}/features/{{fName}}/domain/repositories/{{fName}}_repository.dart';
+
+class {{cName}}RepositoryImpl extends {{cName}}Repository {
+  {{cName}}RemoteDataSource remote;
+
+  {{cName}}RepositoryImpl({required this.remote});
+
+  @override
+  Future<Either<Failure, {{cName}}Entity>> methodExample(Map<String, dynamic> body) async {
+    try {
+      final response = await remote.exampleMethod(body);
+      if (response.data != null) {
+        return Right(response.toEntity);
+      }
+      if (response.errors != null) {
+        return Left(ServerFailure(
+          response.errors?[0]?.message ?? 'unexpected_exception'.translate,
+          null,
+          null,
+          response.errors?[0]?.extensions?.code,
+        ));
+      }
+      return Left(ServerFailure('unexpected_exception'.translate));
+    } catch (e) {
+      if (e is DioException) {
+        if (e.response?.data is Map) {
+          final message = e.response?.data["message"];
+          final errorCode = e.response?.data["code"];
+          return Left(
+              ServerFailure(message ?? 'unexpected_exception'.translate, errorCode ?? -1, e.response?.statusCode));
+        } else if (e.response?.statusCode == 429) {
+          return Left(
+              ServerFailure('sorry_you_moving_fast'.translate, e.response?.statusCode ?? -1, e.response?.statusCode));
+        }
+      }
+      return Left(ServerFailure('unexpected_exception'.translate));
+    }
+  }
+}
