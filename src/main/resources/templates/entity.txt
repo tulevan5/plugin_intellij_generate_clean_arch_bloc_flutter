@@ -1,10 +1,8 @@
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
 
 class {{cName}} extends Equatable {
 
-  {{cName}}({
-  });
+  {{cName}}();
 
   @override
   List<Object> get props => [];
