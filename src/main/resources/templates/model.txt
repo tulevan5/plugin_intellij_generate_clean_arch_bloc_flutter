@@ -6,9 +6,7 @@ part '{{fName}}_response.g.dart';
 @JsonSerializable()
 class {{cName}}Response {
 
-  {{cName}}Response({
-    // TODO: Implement here
-  });
+  {{cName}}Response();
 
   factory {{cName}}Response.fromJson(Map<String, dynamic> json) => _${{cName}}ResponseFromJson(json);
 
