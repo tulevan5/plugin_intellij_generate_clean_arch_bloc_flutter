@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:{{projectName}}/features/{{fName}}/data/models/{{fName}}_response.dart'
+import 'package:{{projectName}}/features/{{fName}}/data/models/{{fName}}_response.dart';
 
 part '{{fName}}_remote_data_source.g.dart';
 
