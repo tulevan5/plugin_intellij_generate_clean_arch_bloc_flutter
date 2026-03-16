@@ -17,16 +17,8 @@ class {{cName}}RepositoryImpl extends {{cName}}Repository {
   Future<Either<Failure, {{cName}}Entity>> methodExample(Map<String, dynamic> body) async {
     try {
       final response = await remote.exampleMethod(body);
-      if (response.data != null) {
+      if (response != null) {
         return Right(response.toEntity);
-      }
-      if (response.errors != null) {
-        return Left(ServerFailure(
-          response.errors?[0]?.message ?? 'unexpected_exception'.translate,
-          null,
-          null,
-          response.errors?[0]?.extensions?.code,
-        ));
       }
       return Left(ServerFailure('unexpected_exception'.translate));
     } catch (e) {
