@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "vn.tulv"
-version = "1.0-SNAPSHOT"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -33,7 +33,7 @@ intellijPlatform {
         }
 
         changeNotes = """
-            Initial version
+            Hoàn thiện phát sinh code.
         """.trimIndent()
     }
 

@@ -15,7 +15,7 @@ class {{cName}}Initial extends {{cName}}State {
 class {{cName}}Loading extends {{cName}}State {}
 
 class {{cName}}Success extends {{cName}}State {
-  const {{cName}}Success({});
+  const {{cName}}Success();
 
   @override
   List<Object?> get props => [];

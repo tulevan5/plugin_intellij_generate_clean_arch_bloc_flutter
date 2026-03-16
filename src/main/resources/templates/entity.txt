@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 
-class {{cName}} extends Equatable {
+class {{cName}}Entity extends Equatable {
 
-  {{cName}}();
+  {{cName}}Entity();
 
   @override
   List<Object> get props => [];

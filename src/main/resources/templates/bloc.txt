@@ -5,7 +5,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import 'package:{{projectName}}/features/{{fName}}/domain/entities/{{fName}}_entity.dart';
-import 'package:{{projectName}}/features/{{fName}}/domain/use_cases/{{fName}}_use_case.dart';
+import 'package:{{projectName}}/features/{{fName}}/domain/use_cases/get_{{fName}}_use_case.dart';
 
 part '{{fName}}_event.dart';
 

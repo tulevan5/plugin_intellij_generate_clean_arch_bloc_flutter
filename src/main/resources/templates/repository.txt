@@ -4,5 +4,5 @@ import 'package:{{projectName}}/core/error/failures.dart';
 import 'package:{{projectName}}/features/{{fName}}/domain/entities/{{fName}}_entity.dart';
 
 abstract class {{cName}}Repository {
-  Future<Either<Failure, {{cName}}>> methodExample(Map<String, dynamic> body);
+  Future<Either<Failure, {{cName}}Entity>> methodExample(Map<String, dynamic> body);
 }

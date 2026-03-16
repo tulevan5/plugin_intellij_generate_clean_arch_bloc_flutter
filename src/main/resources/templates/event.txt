@@ -1,9 +1,7 @@
 part of '{{fName}}_bloc.dart';
 
 class {{cName}}Event extends Equatable {
-  const {{cName}}Event({
-    // TODO: Implement code here
-  });
+  const {{cName}}Event();
 
   @override
   List<Object?> get props => [];
