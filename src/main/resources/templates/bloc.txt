@@ -12,7 +12,7 @@ part '{{fName}}_event.dart';
 part '{{fName}}_state.dart';
 
 class {{cName}}Bloc extends Bloc<{{cName}}Event, {{cName}}State> {
-  final {{cName}}UseCase {{fName}}UseCase;
+  final Get{{cName}}UseCase {{fName}}UseCase;
 
   {{cName}}Bloc({
     required this.{{fName}}UseCase,
@@ -32,10 +32,10 @@ class {{cName}}Bloc extends Bloc<{{cName}}Event, {{cName}}State> {
         emit({{cName}}Failure(message: failure.message ?? 'Error', typeMessage: failure.typeCode));
       },
       (entity) {
-        if (entity.errors == null) {
-          emit({{cName}}Success(entity: entity.data, userInfoJson: entity.dataJson));
+        if (entity == null) {
+          emit({{cName}}Success());
         } else {
-          emit({{cName}}Failure(message: entity.errors?[0]?.message ?? 'Error'));
+          emit({{cName}}Failure(message: 'Error'));
         }
       },
     );
