@@ -34,7 +34,7 @@ class CreateCleanArchAction : AnAction() {
 
                 // -- Data layer ---
                 val data = root.createChildDirectory(this, "data")
-                val ds = data.createChildDirectory(this, "datasource")
+                val ds = data.createChildDirectory(this, "data_sources")
                 createFile(ds, "${fName}_local_data_source.dart", "abstract class ${cName}LocalDataSource {}")
                 createFile(ds, "${fName}_remote_data_source.dart", remoteDSContent)
                 createFile(data.createChildDirectory(this, "models"), "${fName}_response.dart", modelContent)
@@ -42,9 +42,9 @@ class CreateCleanArchAction : AnAction() {
 
                 // --- Tầng Domain ---
                 val domain = root.createChildDirectory(this, "domain")
-                createFile(domain.createChildDirectory(this, "entities"), "${fName}.dart", entityContent)
+                createFile(domain.createChildDirectory(this, "entities"), "${fName}_entity.dart", entityContent)
                 createFile(domain.createChildDirectory(this, "repositories"), "${fName}_repository.dart", repositoryContent)
-                createFile(domain.createChildDirectory(this, "usecases"), "get_${fName}.dart", useCaseContent)
+                createFile(domain.createChildDirectory(this, "use_cases"), "get_${fName}_use_case.dart", useCaseContent)
 
                 // --- Tầng Presentation ---
                 val presentation = root.createChildDirectory(this, "presentation")
